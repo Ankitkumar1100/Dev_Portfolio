@@ -3,8 +3,6 @@
 Welcome to my interactive developer portfolio! 🚀  
 This project showcases my skills, projects, and experience as a Full Stack Developer, all in a unique terminal-inspired interface.
 
-![Portfolio Screenshot](./src/assets/mp.jpg)
-
 ## ✨ Features
 
 - **Interactive Terminal UI:** Explore my background, skills, and projects using terminal commands.
