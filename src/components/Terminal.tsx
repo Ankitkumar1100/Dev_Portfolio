@@ -23,6 +23,7 @@ const Terminal: React.FC = () => {
   ]);
   const [currentInput, setCurrentInput] = useState('');
   const [showCursor, setShowCursor] = useState(true);
+  const [inputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
@@ -144,6 +145,13 @@ const Terminal: React.FC = () => {
     }
   };
 
+  // Focus input when terminal area is clicked
+  const handleTerminalClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
   return (
     <div className="w-full h-full flex flex-col" style={{ fontFamily: 'Courier New, Fira Code, monospace' }}>
       {/* Terminal Header */}
@@ -169,6 +177,7 @@ const Terminal: React.FC = () => {
         ref={terminalRef}
         className="flex-1 p-4 overflow-y-auto text-sm space-y-1 bg-black"
         style={{ fontFamily: 'Courier New, Fira Code, monospace' }}
+        onClick={handleTerminalClick}
       >
         <AnimatePresence>
           {lines.map((line) => (
@@ -191,9 +200,9 @@ const Terminal: React.FC = () => {
           ))}
         </AnimatePresence>
         {/* Current Input Line */}
-        <div className="flex items-center text-green-400" onClick={() => inputRef.current && inputRef.current.focus()}>
+        <div className="flex items-center mt-2">
           <span className="mr-2">ankit@portfolio:~$</span>
-          <div className="relative flex items-center">
+          <div className="relative flex items-center w-full max-w-xs">
             {/* Visually hidden input for keyboard input */}
             <input
               ref={inputRef}
@@ -207,11 +216,15 @@ const Terminal: React.FC = () => {
               autoComplete="off"
               spellCheck="false"
               tabIndex={0}
+              onFocus={() => setInputFocused(true)}
+              onBlur={() => setInputFocused(false)}
             />
             {/* Displayed text and blinking block cursor */}
-            <span className="whitespace-pre text-green-400" style={{ fontFamily: 'Courier New, Fira Code, monospace' }}>
+            <span className="whitespace-pre text-green-400 bg-black px-1 py-0.5 rounded border border-green-700 min-w-[2ch]">
               {currentInput}
-              {showCursor && <span style={{ fontWeight: 'bold', color: '#00ff99' }}>&#9608;</span>}
+              {inputFocused && showCursor && (
+                <span style={{ fontWeight: 'bold', color: '#00ff99' }}>&#9608;</span>
+              )}
             </span>
           </div>
         </div>

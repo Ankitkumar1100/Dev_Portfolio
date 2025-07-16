@@ -15,8 +15,9 @@ const Portfolio: React.FC = () => {
         {/* Card section */}
         <div className="w-full md:w-1/2 flex items-center justify-center bg-transparent min-h-0 h-full relative py-6 md:py-0 mb-6 md:mb-0">
           <InteractiveCard />
+          {/* Changed label to '[Interactive 3D Robo]' */}
           <div className="absolute left-4 bottom-4 md:left-6 md:bottom-6">
-            <div className="text-green-400 text-xs border border-green-400 rounded px-2 py-1 inline-block">[Interactive 3D Card]</div>
+            <div className="text-green-400 text-xs border border-green-400 rounded px-2 py-1 inline-block">[Interactive 3D Robo]</div>
           </div>
         </div>
         {/* Terminal section */}
