@@ -63,7 +63,7 @@ const Terminal: React.FC = () => {
     },
     skills: {
       description: 'See my technical skills',
-      output: `Technical Skills:\n\nFrontend:\n• React, Vue.js, Angular\n• TypeScript, JavaScript (ES6+)\n• HTML5, CSS3, Sass/SCSS\n• Tailwind CSS, Bootstrap\n• React Native, Flutter\n\nBackend:\n• Node.js, Express.js\n• Python, Django, Flask\n• PHP, Laravel\n• RESTful APIs, GraphQL\n\nDatabases:\n• MongoDB, PostgreSQL\n• MySQL, Firebase\n• Redis, Elasticsearch\n\nDevOps & Tools:\n• AWS, Docker, Kubernetes\n• Git, GitHub Actions\n• Jest, Cypress, Webpack\n• Linux, Nginx, PM2`
+      output: `Technical Skills:\n\nFrontend:\n• React \n• TypeScript, JavaScript (ES6+)\n• HTML5, CSS3\n• Tailwind CSS, Bootstrap\n\nBackend:\n• Node.js\n• Python\n• PHP\n\nDatabases:\n• MongoDB, PostgreSQL\n• MySQL, Firebase\n\nDevOps & Tools:\n• AWS, Docker\n• Git, GitHub Actions\n• Linux
     },
     experience: {
       description: 'My work experience',
