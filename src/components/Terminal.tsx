@@ -64,7 +64,7 @@ const Terminal: React.FC = () => {
     },
     skills: {
       description: 'See my technical skills',
-      output: `Technical Skills:\n\nFrontend:\n• React \n• TypeScript, JavaScript (ES6+)\n• HTML5, CSS3\n• Tailwind CSS, Bootstrap\n\nBackend:\n• Node.js\n• Python\n• PHP\n\nDatabases:\n• MongoDB, PostgreSQL\n• MySQL, Firebase\n\nDevOps & Tools:\n• AWS, Docker\n• Git, GitHub Actions\n• Linux
+      output: `Technical Skills:\n\nFrontend:\n• React \n• TypeScript, JavaScript (ES6+)\n• HTML5, CSS3\n• Tailwind CSS, Bootstrap\n\nBackend:\n• Node.js\n• Python\n• PHP\n\nDatabases:\n• MongoDB, PostgreSQL\n• MySQL, Firebase\n\nDevOps & Tools:\n• AWS, Docker\n• Git, GitHub Actions\n• Linux`
     },
     experience: {
       description: 'My work experience',
@@ -175,7 +175,7 @@ const Terminal: React.FC = () => {
       {/* Terminal Content */}
       <div 
         ref={terminalRef}
-        className="flex-1 p-4 overflow-y-auto text-sm space-y-1 bg-black"
+        className="flex-1 p-4 overflow-y-auto text-sm space-y-1 bg-black md:text-sm text-xs md:p-4 p-2"
         style={{ fontFamily: 'Courier New, Fira Code, monospace' }}
         onClick={handleTerminalClick}
       >
@@ -188,11 +188,11 @@ const Terminal: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               {line.isCommand ? (
-                <div className="text-blue-400">
+                <div className="text-blue-400 break-words md:break-normal">
                   <span className="text-green-400">ankit@portfolio:~$</span> {line.command}
                 </div>
               ) : (
-                <div className="text-gray-300 whitespace-pre-line pl-0">
+                <div className="text-gray-300 whitespace-pre-line pl-0 break-words md:break-normal">
                   {line.output}
                 </div>
               )}
@@ -200,9 +200,9 @@ const Terminal: React.FC = () => {
           ))}
         </AnimatePresence>
         {/* Current Input Line */}
-        <div className="flex items-center mt-2">
+        <div className="flex items-center mt-2 flex-wrap md:flex-nowrap">
           <span className="mr-2">ankit@portfolio:~$</span>
-          <div className="relative flex items-center w-full max-w-xs">
+          <div className="relative flex items-center w-full max-w-xs md:max-w-xs max-w-full">
             {/* Visually hidden input for keyboard input */}
             <input
               ref={inputRef}
@@ -220,7 +220,7 @@ const Terminal: React.FC = () => {
               onBlur={() => setInputFocused(false)}
             />
             {/* Displayed text and blinking block cursor */}
-            <span className="whitespace-pre text-green-400 bg-black px-1 py-0.5 rounded border border-green-700 min-w-[2ch]">
+            <span className="whitespace-pre text-green-400 bg-black px-1 py-0.5 rounded border border-green-700 min-w-[2ch] break-words md:break-normal">
               {currentInput}
               {inputFocused && showCursor && (
                 <span style={{ fontWeight: 'bold', color: '#00ff99' }}>&#9608;</span>
