@@ -1,0 +1,284 @@
+.voice-agent {
+    position: fixed;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .voice-agent--bottom-right {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .voice-agent--bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .voice-agent--top-right {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .voice-agent--top-left {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .voice-agent__toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #218096;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .voice-agent__toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .voice-agent__widget {
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .voice-agent__header {
+    background-color: #218096;
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .voice-agent__header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .voice-agent__avatar {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  .voice-agent__name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .voice-agent__status {
+    font-size: 12px;
+    opacity: 0.9;
+  }
+  
+  .voice-agent__messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .voice-agent__message {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .voice-agent__message--user {
+    align-items: flex-end;
+  }
+  
+  .voice-agent__message--agent {
+    align-items: flex-start;
+  }
+  
+  .voice-agent__message-content {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+  
+  .voice-agent__message--user .voice-agent__message-content {
+    background-color: #218096;
+    color: white;
+  }
+  
+  .voice-agent__message--agent .voice-agent__message-content {
+    background-color: #f1f3f4;
+    color: #333;
+  }
+  
+  .voice-agent__message-time {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+    padding: 0 16px;
+  }
+  
+  .voice-agent__voice-status {
+    padding: 8px 16px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .voice-agent__error {
+    color: #e74c3c;
+    font-size: 12px;
+  }
+  
+  .voice-agent__listening-indicator {
+    color: #218096;
+    font-weight: 500;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .voice-agent__permission-btn {
+    background: #218096;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  
+  .voice-agent__input-form {
+    padding: 16px;
+    border-top: 1px solid #eee;
+  }
+  
+  .voice-agent__input-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .voice-agent__input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 16px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .voice-agent__input:focus {
+    border-color: #218096;
+  }
+  
+  .voice-agent__voice-btn, .voice-agent__send-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+  
+  .voice-agent__voice-btn {
+    background-color: #218096;
+    color: white;
+  }
+  
+  .voice-agent__voice-btn--listening {
+    background-color: #e74c3c;
+    animation: pulse 1s infinite;
+  }
+  
+  .voice-agent__voice-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .voice-agent__send-btn {
+    background-color: #218096;
+    color: white;
+  }
+  
+  .voice-agent__send-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .voice-agent__voice-btn:hover:not(:disabled),
+  .voice-agent__send-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .voice-agent__widget {
+      width: 300px;
+      height: 400px;
+    }
+    
+    .voice-agent--bottom-right,
+    .voice-agent--bottom-left {
+      bottom: 10px;
+    }
+    
+    .voice-agent--bottom-right {
+      right: 10px;
+    }
+    
+    .voice-agent--bottom-left {
+      left: 10px;
+    }
+  }
+  
+  /* Dark theme */
+  .voice-agent--dark .voice-agent__widget {
+    background: #2d3748;
+    color: white;
+  }
+  
+  .voice-agent--dark .voice-agent__message--agent .voice-agent__message-content {
+    background-color: #4a5568;
+    color: white;
+  }
+  
+  .voice-agent--dark .voice-agent__input {
+    background: #4a5568;
+    border-color: #5a6b7d;
+    color: white;
+  }
+  
+  .voice-agent--dark .voice-agent__input::placeholder {
+    color: #a0aec0;
+  }
+  
